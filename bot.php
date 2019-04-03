@@ -1,8 +1,8 @@
 <?php
 // parameters
-phpinfo();
+
 $hubVerifyToken = 'verify-token-chat';
-$accessToken =   "EAAEh0ZB48ZAKgBALFJLZARUeMcZCw7mUVwFwSHWTQgbkELyBZCy2nZBOQ8k1ZBWaPf6YcprzDR5bsdjxOjEMZCM1ieRNnI6XheQeJgtu27FC7QEDGtT42UPQFnYnCu0zLW2W40mo4HBrZCRatWi4IaSCL6hQOIj1CUqwFSWZB381jlhgZDZD";
+$accessToken =   "EAAEh0ZB48ZAKgBAMfu5MzZAGZBJXIw1u0eRMoJNBKRL5DZCeaqV1ZAYTXocqYMym4bhqA6DLjNpBSJO3ZCiinclzkjeYjFa6fIC3EA3te03lTBAjWuHZAYAH9EYKfFHBzZAKgCBNXzOu2ddWnTUDmQ9UZCyCAKZCz58Auow4Gnkug6rzQZDZD";
 
 // check token at setup
 if ($_REQUEST['hub_verify_token'] == $hubVerifyToken) {
