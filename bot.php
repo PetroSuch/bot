@@ -53,7 +53,7 @@ if($messageText == "blog"){
     $response['message'] = $answer;
 }
 
-if (strpos($messageText, 'wea') !== false) {
+if (strpos($messageText, 'wea') !== false || strpos($messageText, 'Wea') !== false strpos($messageText, 'огода') !== false) {
   $answer = '';
   $option = explode(" ", $messageText); // Разбивает строку с помощью разделителя $option[1]-Киев,$option[2] = число 3
   require ('phpQuery.php');  // библиотека
@@ -100,7 +100,7 @@ if (strpos($messageText, 'wea') !== false) {
 	    $emoji =hex2bin('E29D8409');
 	  }
 	 // оправляем в канал результат
-	  $res = $day.' '.$temperature.chr(10).' '.$emoji.' '.$icon.chr(10).chr(10);
+	  $res = $day.' '.$temperature.chr(10).''.$emoji.' '.$icon.chr(10).chr(10);
 	  $answer .= $res; 
 	  
 	  $i++;
