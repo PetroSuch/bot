@@ -99,7 +99,7 @@ if (strpos($messageText, 'wea') !== false) {
     $emoji =hex2bin('E29D8409');
   }
  // оправляем в канал результат
-  $response['message'] = ['text'=>$day.$date.chr(10).$temperature.chr(10).$emoji.$icon];
+  $response['message']['text'] .= $day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon;
   $i++;
 	  //requestToTelegram($content);
 	if($i == 2){
