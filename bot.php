@@ -27,8 +27,6 @@ $response = [
 if($messageText == "hi" || $messageText == "Hi") {
     $answer = "Hello";
     $response['message'] = ['text'=>$answer];
-sendMsg();
-
   //send message to facebook bot
 
 }
@@ -103,8 +101,8 @@ if (strpos($messageText, 'wea') !== false) {
 	  }
 	 // оправляем в канал результат
 	  $res = $day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon;
-	  $response['message'] = ['text'=>$res];
-	  sendMsg();
+	  $answer .= '"\r\n"'.$res; 
+	  
 	  $i++;
 	  //requestToTelegram($content);
 	  if($i == 2){
