@@ -56,9 +56,9 @@ if($messageText == "blog"){
 if (strpos($messageText, 'wea') !== false) {
   $option = explode(" ", $text); // Разбивает строку с помощью разделителя $option[1]-Киев,$option[2] = число 3
   require ('phpQuery.php');  // библиотека
- $url = 'https://sinoptik.ua/погода-'.$option[1].'/10-дней';
+  $url = 'https://sinoptik.ua/погода-'.$option[1].'/10-дней';
 
-$html = file_get_contents($url);
+  $html = file_get_contents($url);
 
   //$html=curl_content('https://sinoptik.ua/погода-'.$option[1].'/10-дней');// парсим все 10 дней 
   phpQuery::newDocument($html);
@@ -98,12 +98,16 @@ $html = file_get_contents($url);
     $emoji =hex2bin('E29D8409');
   }
  // оправляем в канал результат
-    $response['message'] = ['text'=>$day.$date.chr(10).$temperature.chr(10).$emoji.$icon];
-  
-  //requestToTelegram($content);
-if(isset($option[2])? $num=$option[2] : $num=2);
-  if(++$i == $num) break;//ограничение в $num выводов
-  }
+  $response['message'] = ['text'=>$day.$date.chr(10).$temperature.chr(10).$emoji.$icon];
+  $i++;
+	  //requestToTelegram($content);
+	if($i == 2){
+		break;
+	}
+}
+
+
+
 }
 if($payload){
   $response['message'] = ['text'=>$payload];
