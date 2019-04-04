@@ -16,7 +16,7 @@ if (strpos($messageText, 'wea') !== false) {
 	
   $content = pq( $content )->find( '#blockDays > .tabs' )->find('.main');
   $xbodycontent = pq('#blockDays > .tabs')->find('.main');
-	var_dump(count($xbodycontent));
+	var_dump( pq( $content ));
   $i=0;
   foreach ($xbodycontent as $res) {
     $pqres=pq($res);
