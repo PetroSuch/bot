@@ -100,13 +100,15 @@ if (strpos($messageText, 'wea') !== false) {
     $emoji =hex2bin('E29D8409');
   }
  // оправляем в канал результат
-  $answer .= $day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon;
+  $response['message'] = ['text'=>$day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon];
+  sendMsg();
   $i++;
-	  //requestToTelegram($content);
-	if($i == 2){
-		break;
-	}
+  //requestToTelegram($content);
+  if($i == 3){
+     break;
+  }
 }
+  return false;
   $response['message'] = ['text'=>$answer];
 }
 if($payload){
@@ -123,4 +125,16 @@ if(!empty($input)){
 $result = curl_exec($ch);
 }
 curl_close($ch);
+
+
+function sendMsg(){
+	$ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+	if(!empty($input)){
+	$result = curl_exec($ch);
+	}
+	curl_close($ch);
+}
 ?>
