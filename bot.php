@@ -54,6 +54,7 @@ if($messageText == "blog"){
 }
 
 if (strpos($messageText, 'wea') !== false) {
+  $answer = '';
   $option = explode(" ", $messageText); // Разбивает строку с помощью разделителя $option[1]-Киев,$option[2] = число 3
   require ('phpQuery.php');  // библиотека
   $url = 'https://ua.sinoptik.ua/погода-'.$option[1];
@@ -99,16 +100,14 @@ if (strpos($messageText, 'wea') !== false) {
     $emoji =hex2bin('E29D8409');
   }
  // оправляем в канал результат
-  $response['message']['text'] .= $day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon;
+  $answer .= $day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon;
   $i++;
 	  //requestToTelegram($content);
 	if($i == 2){
 		break;
 	}
 }
-
-
-
+  $response['message'] = ['text'=>$answer];
 }
 if($payload){
   $response['message'] = ['text'=>$payload];
