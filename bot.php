@@ -53,7 +53,7 @@ if($messageText == "blog"){
     $response['message'] = $answer;
 }
 
-if (strpos($messageText, 'wea') !== false || strpos($messageText, 'Wea') !== false strpos($messageText, 'огода') !== false) {
+if (strpos($messageText, 'wea') !== false || strpos($messageText, 'Wea') !== false || strpos($messageText, 'огода') !== false) {
   $answer = '';
   $option = explode(" ", $messageText); // Разбивает строку с помощью разделителя $option[1]-Киев,$option[2] = число 3
   require ('phpQuery.php');  // библиотека
