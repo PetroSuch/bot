@@ -54,7 +54,7 @@ if($messageText == "blog"){
 }
 
 if (strpos($messageText, 'wea') !== false) {
-  $option = explode(" ", $text); // Разбивает строку с помощью разделителя $option[1]-Киев,$option[2] = число 3
+  $option = explode(" ", $messageText); // Разбивает строку с помощью разделителя $option[1]-Киев,$option[2] = число 3
   require ('phpQuery.php');  // библиотека
   $url = 'https://sinoptik.ua/погода-'.$option[1].'/10-дней';
 
