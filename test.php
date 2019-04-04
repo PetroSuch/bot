@@ -13,9 +13,10 @@ if (strpos($messageText, 'wea') !== false) {
   phpQuery::newDocument($html);
  
   $content = phpQuery::newDocument( $html );
-	var_dump($content);
+	
   $content = pq( $content )->find( '#blockDays > .tabs' )->find('.main');
   $xbodycontent = pq('#blockDays > .tabs')->find('.main');
+	var_dump(count($xbodycontent));
   $i=0;
   foreach ($xbodycontent as $res) {
     $pqres=pq($res);
