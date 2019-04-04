@@ -27,6 +27,8 @@ $response = [
 if($messageText == "hi" || $messageText == "Hi") {
     $answer = "Hello";
     $response['message'] = ['text'=>$answer];
+sendMsg();
+	return false;
   //send message to facebook bot
 
 }
