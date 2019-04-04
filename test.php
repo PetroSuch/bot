@@ -1,5 +1,6 @@
 
 <?php
+$messageText = $_GET['q'];
 if (strpos($messageText, 'wea') !== false) {
   $option = explode(" ", $text); // Разбивает строку с помощью разделителя $option[1]-Киев,$option[2] = число 3
   require ('phpQuery.php');  // библиотека
