@@ -60,7 +60,7 @@ if (strpos($messageText, 'wea') !== false) {
 
   $html = file_get_contents($url);
 
-  //$html=curl_content('https://sinoptik.ua/погода-'.$option[1].'/10-дней');// парсим все 10 дней 
+  //$html=curl_content('https://ua.sinoptik.ua/погода-'.$option[1].'/10-дней');// парсим все 10 дней 
   phpQuery::newDocument($html);
  
   $content = phpQuery::newDocument( $html );
