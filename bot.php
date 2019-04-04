@@ -19,7 +19,7 @@ $response = null;
 
 //set Message
 $answer = '';
-if($messageText == "hi") {
+if($messageText == "hi" || $messageText == "Hi") {
     $answer = "Hello";
 }
 if($messageText == "blog"){
