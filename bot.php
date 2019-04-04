@@ -101,11 +101,11 @@ if (strpos($messageText, 'wea') !== false) {
 	  }
 	 // оправляем в канал результат
 	  $res = $day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon;
-	  $answer .= '"\r\n"'.$res; 
+	  $answer .= '\r\n'.$res; 
 	  
 	  $i++;
 	  //requestToTelegram($content);
-	  if($i == 2){
+	  if($i == 3){
 	     break;
 	  }
 	}
