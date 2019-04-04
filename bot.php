@@ -100,7 +100,7 @@ if (strpos($messageText, 'wea') !== false) {
 	    $emoji =hex2bin('E29D8409');
 	  }
 	 // оправляем в канал результат
-	  $res = $day.' '.$date.chr(10).' '.$temperature.chr(10).' '.$emoji.' '.$icon.'\n';
+	  $res = $day.' '.$temperature.chr(10).' '.$emoji.' '.$icon.'<br><br>';
 	  $answer .= $res; 
 	  
 	  $i++;
