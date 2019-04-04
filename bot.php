@@ -28,7 +28,7 @@ if($messageText == "hi" || $messageText == "Hi") {
     $answer = "Hello";
     $response['message'] = ['text'=>$answer];
 sendMsg();
-	return false;
+	exit();
   //send message to facebook bot
 
 }
@@ -111,7 +111,7 @@ if (strpos($messageText, 'wea') !== false) {
 	     break;
 	  }
 	}
-  return false;
+  exit();
   $response['message'] = ['text'=>$answer];
 }
 if($payload){
