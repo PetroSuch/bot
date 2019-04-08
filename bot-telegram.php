@@ -1,5 +1,5 @@
 <?php
-required('telegram-bot/api');
+require_once "vendor/autoload.php";
 $token = "640430644:AAFOS1a9T-mC4WV2uG4ez99xQ5v7dckdwQk";
 $bot = new \TelegramBot\Api\Client($token);
 // команда для start
