@@ -111,7 +111,7 @@ if($messageText == "hi" || $messageText == "Hi") {
 }else if($payload){
   $response['message'] = ['text'=>$payload];
 }else if((strpos($messageText, 'location') !== false ){
-	curl 
+
 	$ch = curl_init('https://graph.facebook.com/v3.2/'.$senderId.'/');
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
