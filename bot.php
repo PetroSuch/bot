@@ -110,6 +110,13 @@ if($messageText == "hi" || $messageText == "Hi") {
   $response['message'] = ['text'=>$answer];
 }else if($payload){
   $response['message'] = ['text'=>$payload];
+}else if((strpos($messageText, 'location') !== false ){
+	curl 
+	$ch = curl_init('https://graph.facebook.com/v3.2/'.$senderId.'/');
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$result = curl_exec($ch);
+	$response['message'] = ['text'=>json_encode($result)];
 }else{
   $response['message'] = ['text'=>'Sorry, I do not understand you'];
 }
