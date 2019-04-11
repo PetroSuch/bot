@@ -1,8 +1,8 @@
 <?php
 // parameters
 
-$hubVerifyToken = 'verify-token-chat';
-$accessToken =   "EAAEh0ZB48ZAKgBAMfu5MzZAGZBJXIw1u0eRMoJNBKRL5DZCeaqV1ZAYTXocqYMym4bhqA6DLjNpBSJO3ZCiinclzkjeYjFa6fIC3EA3te03lTBAjWuHZAYAH9EYKfFHBzZAKgCBNXzOu2ddWnTUDmQ9UZCyCAKZCz58Auow4Gnkug6rzQZDZD";
+$hubVerifyToken = 'weather-token';
+$accessToken =   "EAAGKCpwmIrEBAOokeeN9xwFmKOOMPkomCaUtavxh4Pu3UHZAn1VuwTtx8vKaget2SE7Kt2Go5QNKCQ9Azp3BPiqtBzkRePhvjrj9vIUsMCnpBP6r1JoZCjjSz10Tiv76p4Jp7MKZAoACX5miB12nV69gVzNThXZCkTEz9J7csAZDZD";
 
 // check token at setup
 if ($_REQUEST['hub_verify_token'] == $hubVerifyToken) {
