@@ -95,7 +95,7 @@ if($messageText == "hi" || $messageText == "Hi" || $messageText == "Hello") {
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$result = curl_exec($ch);
 	$response['message'] = ['text'=>json_encode($result)];
-}else if(strpos($messageText,'birth) != false){
+}else if(strpos($messageText,'birth') != false){
 	$ch = curl_init("https://graph.facebook.com/$senderId?fields=id,name&access_token=$accessToken");
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
