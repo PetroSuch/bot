@@ -100,7 +100,7 @@ if($messageText == "hi" || $messageText == "Hi" || $messageText == "Hello") {
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$result = curl_exec($ch);
-	$response['message'] = ['text'=>json_encode($result)];
+	$response['message'] = ['text'=>json_encode($result).$ch];
 }else{
   $response['message'] = ['text'=>"Sorry, I don't understand you"];
 }
