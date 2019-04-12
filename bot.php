@@ -73,29 +73,7 @@ if($messageText == "hi" || $messageText == "Hi" || $messageText == "Hello") {
 	    $icon = $pqres->find('.weatherIco')->attr('title');//надпись на картинке
 	    $iconimg = $pqres->find('.weatherImg')->html();//надпись на картинке
 	    $temperature = $pqres->find('.temperature')->text();// Температура
-	    //проверяем что а погода чтобы определить какой смайлик отправить для визуализации
-	    $emoji = '';
-	  if ($icon == 'Сплошная облачность, небольшой снег') {
-	    $emoji = hex2bin('F09F8CA809'); //hex2bin('f09f9880') //представление смайла https://apps.timwhitlock.info/emoji/tables/unicode
-	  }
-	  if ($icon == 'Сплошная облачность, сильный снег') {
-	    $emoji = hex2bin('F09F8CA809');
-	  }
-	   if ($icon == 'Сплошная облачность, снег') {
-	    $emoji = hex2bin('E29B84');
-	  }
-	  if ($icon == 'Сплошная облачность') {
-	    $emoji = hex2bin('E29881');
-	  }
-	  if ($icon == 'Облачно с прояснениями, мокрый снег') {
-	    $emoji =hex2bin('F09F8CA609');
-	  }
-	  if ($icon == 'Облачно с прояснениями') {
-	    $emoji =hex2bin('F09F8CA409');
-	  }
-	  if ($icon == 'Облачно с прояснениями, небольшой снег') {
-	    $emoji =hex2bin('E29D8409');
-	  }
+	    //проверяем что а погода чтобы определить какой смайлик отправить для визуализаци
 	 // оправляем в канал результат
 	  $res = $day.' '.$temperature.chr(10).$icon.chr(10).chr(10);
 	  $answer .= $res; 
@@ -112,6 +90,12 @@ if($messageText == "hi" || $messageText == "Hi" || $messageText == "Hello") {
   $response['message'] = ['text'=>$payload];
 }else if(strpos($messageText, 'location') !== false ){
 
+	$ch = curl_init('https://graph.facebook.com/v3.2/'.$senderId.'/');
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$result = curl_exec($ch);
+	$response['message'] = ['text'=>json_encode($result)];
+}else if($messageText == 'b'){
 	$ch = curl_init('https://graph.facebook.com/v3.2/'.$senderId.'/');
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
