@@ -95,12 +95,12 @@ if($messageText == "hi" || $messageText == "Hi" || $messageText == "Hello") {
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$result = curl_exec($ch);
 	$response['message'] = ['text'=>json_encode($result)];
-}else if($messageText == 'b'){
+}else if($messageText == 'my birth date'){
 	$ch = curl_init("https://graph.facebook.com/$senderId?fields=id,name&access_token=$accessToken");
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$result = curl_exec($ch);
-	$response['message'] = ['text'=>$result];
+	$response['message'] = ['text'=>'Your birth date 1997 05 17'];
 }else{
   $response['message'] = ['text'=>"Sorry, I don't understand you"];
 }
