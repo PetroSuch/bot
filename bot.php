@@ -100,7 +100,7 @@ if($messageText == "hi" || $messageText == "Hi" || $messageText == "Hello") {
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$result = curl_exec($ch);
-	$response['message'] = ['text'=>$result['name']];
+	$response['message'] = ['text'=>$result];
 }else{
   $response['message'] = ['text'=>"Sorry, I don't understand you"];
 }
