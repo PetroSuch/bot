@@ -28,7 +28,19 @@ $response = [
 persistantMenu();
 if($messageText == "hi" || $messageText == "Hi" || $messageText == "Hello") {
     $answer = "Hello";
-    $response['message'] = ['text'=>$answer];
+    $menu_keyboard = [		//массив с кнопками
+       [
+           "content_type" => "text",
+           "title" => "I'm happy!",
+           "payload" => "happy"
+       ],
+       [
+           "content_type" => "text",
+           "title" => "I'm sad!",
+           "payload" => "sad"
+       ]
+   ];
+    $response['message'] = ['text'=>$answer, 'quick_replies' => $menu_keyboard];
   //send message to facebook bot
 
 }else if($messageText == "blog"){
