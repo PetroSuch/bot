@@ -116,7 +116,28 @@ $result = curl_exec($ch);
 }
 curl_close($ch);
 
-
+function persistantMenu(){
+	$menu = ["persistent_menu"=>[
+  	    [
+		    "locale"=>"default",
+		    "composer_input_disabled"=> true,
+		    "call_to_actions"=>[
+		      [
+			"type"=>"postback",
+			"title"=>"Latest Posts",
+			"payload"=>"LATEST_POST_PAYLOAD"
+		      ],
+		    ]
+	    ]
+	];
+	$ch = curl_init('https://graph.facebook.com/v2.6/me/messenger_profile?access_token='.$accessToken);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($menu));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+	if(!empty($input)){
+	$result = curl_exec($ch);
+	curl_close($ch);
+}
 function sendMsg(){
 	$ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
 	curl_setopt($ch, CURLOPT_POST, 1);
