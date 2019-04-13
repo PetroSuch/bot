@@ -118,6 +118,7 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 function persistantMenu(){
+	echo"menu";
 	$menu = ["persistent_menu"=>
   	    [
 		    "locale"=>"default",
